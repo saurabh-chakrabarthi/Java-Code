@@ -1,4 +1,4 @@
-package com.java.poc.curatedPracticeList.two_pointers;
+package com.java.poc.dsa.string.sequence_and_subsequence;
 
 public class SubsequenceChecker {
 

@@ -1,4 +1,4 @@
-package com.java.poc.curatedPracticeList.dp_multidimensional;
+package com.java.poc.dsa.string.sequence_and_subsequence;
 
 /**
  * 1143. Longest Common Subsequence

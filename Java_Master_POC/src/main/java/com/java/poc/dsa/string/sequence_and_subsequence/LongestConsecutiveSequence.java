@@ -1,4 +1,4 @@
-package com.java.poc.dsa.array_and_hashing;
+package com.java.poc.dsa.string.sequence_and_subsequence;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package com.java.poc.dsa.string.subsequence;
+package com.java.poc.dsa.string.sequence_and_subsequence;
 
 /**
  * 392. Is Subsequence

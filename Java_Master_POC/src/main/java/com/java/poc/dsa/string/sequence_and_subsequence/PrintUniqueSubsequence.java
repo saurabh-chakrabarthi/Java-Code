@@ -1,4 +1,4 @@
-package com.java.poc.java_basics.recursion;
+package com.java.poc.dsa.string.sequence_and_subsequence;
 
 import java.util.ArrayList;
 import java.util.HashSet;
