@@ -1,4 +1,6 @@
-package com.java.poc.dsa.tree;
+package com.java.poc.dsa.binary_search_tree;
+
+import com.java.poc.dsa.tree.TreeNode;
 
 public class SearchInBST {
 

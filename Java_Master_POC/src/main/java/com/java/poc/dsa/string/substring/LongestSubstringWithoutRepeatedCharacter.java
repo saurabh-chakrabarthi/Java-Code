@@ -45,6 +45,7 @@ public class LongestSubstringWithoutRepeatedCharacter {
 
     public static void main(String[] args) {
         System.out.println(lengthOfLongestSubstring("abcabcaabb"));
+        System.out.println(lengthOfLongestSubstringSlidingWindow("abcabcaabb"));
     }
 
     public static int lengthOfLongestSubstring(String s) {
@@ -59,5 +60,22 @@ public class LongestSubstringWithoutRepeatedCharacter {
             lookup.put(s.charAt(right), right + 1);
         }
         return result;
+    }
+
+    //sliding window approach
+    public static int lengthOfLongestSubstringSlidingWindow(String s) {
+        Set<Character> set = new HashSet<>();
+        int left = 0, right = 0, maxLength = 0;
+        while(right < s.length()) {
+            if(!set.contains(s.charAt(right))) {
+                set.add(s.charAt(right));
+                right++;
+                maxLength = Math.max(maxLength, set.size());
+            } else {
+                set.remove(s.charAt(left));
+                left++;
+            }
+        }
+        return maxLength;
     }
 }

@@ -1,6 +1,6 @@
 package com.java.poc.dsa.slidingWindow;
 
-public class SlidingWindowDemo {
+public class Sumof3ContagiousNumbers {
 
     public static void main(String[] args) {
         int[] nums = new int[]{1,0,1,2,1,1,7,5};
@@ -12,13 +12,13 @@ public class SlidingWindowDemo {
         int sum = 0;
         int maxSum = 0;
 
-        for (int i = 0; i < nums.length; i++) {
-            sum += nums[i];
-            count ++;
-            if(maxSum < sum){
+        for (int num : nums) {
+            sum += num;
+            count++;
+            if (maxSum < sum) {
                 maxSum = sum;
             }
-            if(count >= x){
+            if (count >= x) {
                 break;
             }
         }
