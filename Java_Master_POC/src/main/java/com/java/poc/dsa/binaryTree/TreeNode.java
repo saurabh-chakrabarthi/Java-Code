@@ -1,4 +1,4 @@
-package com.java.poc.dsa.tree;
+package com.java.poc.dsa.binaryTree;
 
 public class TreeNode {
     public int val;

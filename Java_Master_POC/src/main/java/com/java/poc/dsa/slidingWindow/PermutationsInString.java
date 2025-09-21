@@ -1,5 +1,6 @@
 package com.java.poc.dsa.slidingWindow;
 
+import java.util.Arrays;
 import java.util.Map;
 
 /**
@@ -30,6 +31,7 @@ public class PermutationsInString {
         String s1 = "ab";
         String s2 = "eidbaooo";
         System.out.println(checkInclusion(s1, s2));
+        System.out.println(checkInclusionUsingArrays(s1, s2));
     }
 
     private static boolean checkInclusion(String s1, String s2) {
@@ -56,6 +58,38 @@ public class PermutationsInString {
                 return true;
             }
         }
+        return false;
+    }
+
+    private static boolean checkInclusionUsingArrays(String s1, String s2) {
+        if (s1.length() > s2.length()) return false;
+
+        int[] count1 = new int[26];
+        int[] count2 = new int[26];
+
+        // Build frequency for s1
+        for (char c : s1.toCharArray()) {
+            count1[c - 'a']++;
+        }
+
+        // First window in s2
+        for (int i = 0; i < s1.length(); i++) {
+            count2[s2.charAt(i) - 'a']++;
+        }
+
+        // Check first window
+        if (Arrays.equals(count1, count2)) return true;
+
+        // Slide the window across s2
+        for (int i = s1.length(); i < s2.length(); i++) {
+            // add new char
+            count2[s2.charAt(i) - 'a']++;
+            // remove old char
+            count2[s2.charAt(i - s1.length()) - 'a']--;
+
+            if (Arrays.equals(count1, count2)) return true;
+        }
+
         return false;
     }
 }

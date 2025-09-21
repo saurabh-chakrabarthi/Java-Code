@@ -49,15 +49,15 @@ public class LongestSubstringWithoutRepeatedCharacter {
     }
 
     public static int lengthOfLongestSubstring(String s) {
-        Map<Character, Integer> lookup = new HashMap<>();
+        Map<Character, Integer> map = new HashMap<>();
         int result = 0;
         int left = 0;
         for(int right = 0; right < s.length(); right++) {
-            if(lookup.containsKey(s.charAt(right))) {
-                left = Math.max(left, lookup.get(s.charAt(right)));
+            if(map.containsKey(s.charAt(right))) {
+                left = Math.max(left, map.get(s.charAt(right)));
             }
             result = Math.max(result, right - left + 1);
-            lookup.put(s.charAt(right), right + 1);
+            map.put(s.charAt(right), right + 1);
         }
         return result;
     }

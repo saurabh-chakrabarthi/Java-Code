@@ -1,6 +1,6 @@
 package com.java.poc.common_patterns;
 
-import com.java.poc.dsa.tree.TreeNode;
+import com.java.poc.dsa.binaryTree.TreeNode;
 
 public class Dfs {
     public static void main(String[] args) {

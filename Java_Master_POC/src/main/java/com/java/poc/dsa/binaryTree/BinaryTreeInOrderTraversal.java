@@ -1,4 +1,4 @@
-package com.java.poc.dsa.tree;
+package com.java.poc.dsa.binaryTree;
 
 import java.util.ArrayList;
 import java.util.List;
