@@ -1,4 +1,4 @@
-package com.java.poc.dsa.string;
+package com.java.poc.dsa.stack;
 
 import java.util.Stack;
 

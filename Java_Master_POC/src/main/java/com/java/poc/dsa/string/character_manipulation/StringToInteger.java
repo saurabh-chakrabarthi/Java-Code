@@ -1,4 +1,4 @@
-package com.java.poc.dsa.string;
+package com.java.poc.dsa.string.character_manipulation;
 
 public class StringToInteger {
     public static void main(String[] args) {

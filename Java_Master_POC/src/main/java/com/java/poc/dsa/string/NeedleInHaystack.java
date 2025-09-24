@@ -9,7 +9,7 @@ public class NeedleInHaystack {
     }
     public static int strStr(String haystack, String needle) {
 
-        if(needle.length() == 0 || haystack.equals(needle)){
+        if(needle.isEmpty() || haystack.equals(needle)){
             return 0;
         }
 

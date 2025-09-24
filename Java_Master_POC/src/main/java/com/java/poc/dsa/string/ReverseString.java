@@ -10,6 +10,7 @@ public class ReverseString {
     System.out.println("Reversed String is : "+reverseString(txt.toCharArray()));
     System.out.println("Reversed String is : "+reverseString1(txt.toCharArray()));
     System.out.println("Reversed String is : "+reverseString2("hello"));
+    System.out.println("Reversed String is : "+reverseStr("abcdefg",2));
   }
 
   public static String reverseString(char[] s) {
@@ -47,5 +48,18 @@ public class ReverseString {
     }
 
     return sb.toString();
+  }
+
+  public static String reverseStr(String s, int k) {
+    char[] a = s.toCharArray();
+    for (int start = 0; start < a.length; start += 2 * k) {
+      int i = start, j = Math.min(start + k - 1, a.length - 1);
+      while (i < j) {
+        char tmp = a[i];
+        a[i++] = a[j];
+        a[j--] = tmp;
+      }
+    }
+    return new String(a);
   }
 }

@@ -1,4 +1,4 @@
-package com.java.poc.dsa.string;
+package com.java.poc.dsa.string.character_manipulation;
 
 /**
  * 424. Longest Repeating Character Replacement
@@ -34,6 +34,29 @@ package com.java.poc.dsa.string;
 public class LongestRepeatingCharacterReplacement {
 
     public static void main(String[] args) {
+        String s = "AABABBA";
+        int k = 1;
+        System.out.println(characterReplacement(s,k));
+    }
 
+    private static String characterReplacement(String s, int k) {
+        int[] count = new int[26];
+        int maxCount = 0;
+        int maxLength = 0;
+        int left = 0;
+
+        for (int right = 0; right < s.length(); right++) {
+            count[s.charAt(right) - 'A']++;
+            maxCount = Math.max(maxCount, count[s.charAt(right) - 'A']);
+
+            while (right - left + 1 - maxCount > k) {
+                count[s.charAt(left) - 'A']--;
+                left++;
+            }
+
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+
+        return "Longest substring length is : " + maxLength;
     }
 }

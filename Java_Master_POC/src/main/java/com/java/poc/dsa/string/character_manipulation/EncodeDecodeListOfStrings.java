@@ -1,4 +1,4 @@
-package com.java.poc.dsa.string;
+package com.java.poc.dsa.string.character_manipulation;
 
 import java.util.ArrayList;
 import java.util.List;

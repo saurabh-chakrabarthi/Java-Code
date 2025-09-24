@@ -1,4 +1,4 @@
-package com.java.poc.dsa.string;
+package com.java.poc.dsa.string.character_manipulation;
 
 import java.util.Arrays;
 
@@ -8,6 +8,7 @@ public class ValidAnagrams {
         String t = "margana";
 
         System.out.println("is anagram valid ? : "+isAnagramValid(s,t));
+        System.out.println("is anagram valid ? : "+isAnagram(s,t));
     }
 
     public static boolean isAnagramValid(String s, String t) {
@@ -28,5 +29,19 @@ public class ValidAnagrams {
         System.out.println(sb1);
         System.out.println(sb2);
         return sb1.toString().equals(sb2.toString());
+    }
+
+    public static boolean isAnagram(String s, String t) {
+        int[] a = new int[26];
+        for (char c : s.toCharArray()) {
+            a[c - 'a']++;
+        }
+        for (char c : t.toCharArray()) {
+            a[c - 'a']--;
+        }
+        for (int n : a) {
+            if (n != 0) return false;
+        }
+        return true;
     }
 }
